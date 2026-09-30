@@ -24,6 +24,7 @@ import 'widgets/enterprise/enterprise_measurement_card.dart';
 import 'widgets/enterprise/glass_card.dart';
 import 'widgets/enterprise/responsive_layout.dart';
 import 'widgets/anatomy_overlay_layer.dart';
+import 'shell/app_navigation_shell.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -55,7 +56,9 @@ class ImageDetectorApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Milk Mirror',
       theme: AppTheme.build(),
-      home: const DetectorHomePage(),
+      home: const AppNavigationShell(
+        detectTab: DetectorHomePage(),
+      ),
     );
   }
 }

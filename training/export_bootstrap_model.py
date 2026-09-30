@@ -39,7 +39,8 @@ def main():
 
     saved_dir = Path("output") / "bootstrap_saved_model"
     saved_dir.mkdir(parents=True, exist_ok=True)
-    model.save(saved_dir)
+    # Keras 3 requires `export()` for SavedModel used by TFLite conversion.
+    model.export(saved_dir)
 
     converter = tf.lite.TFLiteConverter.from_saved_model(str(saved_dir))
     tflite_bytes = converter.convert()

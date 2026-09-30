@@ -33,7 +33,8 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
       await tester.pump();
 
-      expect(find.text('MILK MIRROR'), findsOneWidget);
+      expect(find.text('Milk Mirror'), findsOneWidget);
+      expect(find.text('Detect'), findsOneWidget);
       expect(
         find.textContaining('BOOTING AI').evaluate().isNotEmpty ||
             find.textContaining('AI ONLINE').evaluate().isNotEmpty,
